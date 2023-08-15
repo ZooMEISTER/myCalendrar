@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Options"
+    android:background="#486BE8">
+
+    <!--  设置内容:  -->
+    <!--  1.是否显示节日  -->
+    <!--  2.通知相关  -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <!--      包含返回按钮      -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout_btn_BackToMain_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_BackToMain"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/btn_selector"
+                        android:src="@drawable/baseline_arrow_back_24"
+                        android:scaleType="fitCenter"/>
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <!--      包含播放铃声按钮      -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btn_PlayRing"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/btn_selector"
+                        android:src="@drawable/baseline_play_circle_outline_24"
+                        android:scaleType="fitCenter"/>
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--    假装的阴影view    -->
+        <View
+            android:id="@+id/View_FakeShadow0"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/thecalendar_shadow"/>
+
+
+        <!--    包含所有的设置的ScrollView    -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--        设置内容        -->
+                <!--        是否显示节日        -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:gravity="center"
+                    >
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_ShowFestival"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        android:text="显示节日"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:gravity="center"
+                        android:theme="@style/CheckBox"
+                        >
+                    </CheckBox>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <!--        是否显示通知        -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_ShowTodayNotification"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        android:text="显示今日日程通知"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:gravity="center"
+                        android:theme="@style/CheckBox"
+                        >
+                    </CheckBox>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+
+                <!--        是否将FAB变成透明的        -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_FABTransparent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        android:text="透明浮动按钮"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:gravity="center"
+                        android:theme="@style/CheckBox"
+                        >
+                    </CheckBox>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <!--        选择日程开始通知时的铃声        -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="日程铃声: "
+                        android:textSize="25dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        />
+
+<!--                    <Spinner-->
+<!--                        android:id="@+id/spinnerCurrentRing"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:entries="@array/rings"-->
+<!--                        android:spinnerMode="dropdown"-->
+<!--                        android:backgroundTint="@color/white">-->
+<!--                    </Spinner>-->
+
+                    <org.angmarch.views.NiceSpinner
+                        android:id="@+id/spinnerCurrentRing"
+                        android:layout_width="160dp"
+                        android:layout_height="55dp"
+                        android:textSize="20sp"
+                        app:arrowTint="@color/dividespaceviewcolor"
+                        app:textTint="@color/dividespaceviewcolor"
+                        />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <!--        查看所有备忘录        -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/btn_CheckAllUserBackUpMsgs"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="10"
+                        android:text="查看所有日程"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:background="@color/light_blue"
+                        android:gravity="center"
+                        >
+                    </Button>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

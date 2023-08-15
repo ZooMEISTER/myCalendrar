@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="50dp"
+    android:id="@+id/text1"
+    android:text="杭州"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:background="#486BE8"
+    android:textAlignment="center"
+    android:gravity="center"
+    >
+</TextView>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#486BE8">
+
+    <!--  最大的相对布局  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    假装的阴影view    -->
+        <View
+            android:id="@+id/View_FakeShadow0"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/thecalendar_shadow"/>
+
+        <!--    假装的阴影view    -->
+        <View
+            android:id="@+id/View_FakeShadow"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/thecalendar_shadow"
+            />
+
+        <!--  最大的线性布局  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--    包含了选择年月，日历折叠按钮，设置按钮的线性布局    -->
+            <LinearLayout
+                android:id="@+id/LinearLayout_DatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/txtSelectYearAndMonth"
+                        android:text="0000 年 00 月"
+                        android:background="@drawable/date_selector"
+                        style="@style/pulldowntitle" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                    <!--展示全年日历视图-->
+                    <ImageButton
+                        android:id="@+id/btn_ShowFullYearView"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/btn_selector"
+                        android:src="@drawable/baseline_calendar_month_24"/>
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/btn_FoldTheCalendar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/btn_selector"
+                        android:src="@drawable/baseline_keyboard_arrow_up_24"/>
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/btn_Options"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_selector"
+                        android:src="@drawable/option_white"
+                        android:scaleType="fitCenter"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/mainspaceview"
+                android:background="@color/dividespaceviewcolor"
+                android:visibility="invisible"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.16"
+                    android:background="@color/background_blue"
+                    android:visibility="invisible"/>
+
+
+                <!--    包含了日期日历的线性布局    -->
+                <!--    在代码中动态添加控件    -->
+                <LinearLayout
+                    android:id="@+id/LinearLayout_TheCalendar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.16"
+                    android:background="@color/background_blue"
+                    android:visibility="invisible"/>
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/mainspaceview"
+                android:background="@color/dividespaceviewcolor"
+                android:visibility="invisible"/>
+
+
+            <!--    滚动部分    -->
+            <ScrollView
+                android:id="@+id/scrollView_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <!--      包含天气预报相关信息的线性布局      -->
+                    <LinearLayout
+                        android:id="@+id/LinearLayout_WeatherForecast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            style="@style/submoduletitle"
+                            android:text="天气预报" />
+
+
+                    </LinearLayout>
+
+
+                    <!--      包含用户备忘录笔记等内容的线性布局      -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"/>
+
+                        <!--          备忘录模块的标题          -->
+                        <TextView
+                            style="@style/submoduletitle"
+                            android:text="日 程" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"/>
+
+                        <!--当选中的日期没有备忘录时显示这个线性布局-->
+                        <LinearLayout
+                            android:id="@+id/LinearLayout_NoUserBackUpMsg"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/backup_white"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="该日当前没有日程"
+                                android:textColor="@color/white"
+                                android:textSize="25sp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/LinearLayout_BiggestUserBackUpMsg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <View
+                                style="@style/backupmodulelandrspaceview"/>
+
+
+                            <!-- 包含备忘录的单个条目  -->
+                            <!-- 本来这里是ScrollView的，但不支持两个同方向的ScrollView嵌套  -->
+                            <!-- 故换成LinearLayout  -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="10">
+
+                                <LinearLayout
+                                    android:id="@+id/LinearLayout_UserBackUpMsg"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <View
+                                style="@style/backupmodulelandrspaceview"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+<!--        <com.components.MovableFloatingActionButton-->
+<!--            android:id="@+id/btn_BackToToday"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:src="@drawable/baseline_gps_fixed_24"/>-->
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_BackToToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:paddingBottom="30dp"
+                app:fab_icon="@drawable/baseline_gps_fixed_24"
+                app:fab_size="normal"
+                app:fab_colorNormal="@color/white"
+                app:fab_colorPressed="#3B61E8"
+                tools:ignore="RtlSymmetry" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_AddNewUserBackUpMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                app:fab_icon="@drawable/plus"
+                app:fab_size="normal"
+                app:fab_colorNormal="#FF8199EF"
+                app:fab_colorPressed="@color/background_blue"
+                tools:ignore="RtlSymmetry" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

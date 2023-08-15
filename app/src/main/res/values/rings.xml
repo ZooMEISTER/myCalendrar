@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rings">
+        <item>ciao</item>
+        <item>apple</item>
+        <item>amogus</item>
+        <item>aughhh</item>
+        <item>helikopter</item>
+        <item>metalpipe</item>
+        <item>siu</item>
+    </string-array>
+</resources>

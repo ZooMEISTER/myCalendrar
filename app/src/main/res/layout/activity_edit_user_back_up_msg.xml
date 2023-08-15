@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_EditUserBackUpMsg"
+    android:background="#486BE8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <!--      包含返回按钮（取消编辑）      -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout_btn_BackToMain_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton
+                        android:id="@+id/btn_BackToMain"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/btn_selector"
+                        android:src="@drawable/baseline_arrow_back_24"
+                        android:scaleType="fitCenter"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/btn_ShareToQQ"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_selector"
+                    android:src="@drawable/baseline_share_24"
+                    android:scaleType="fitCenter"/>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_DelThisUserBackUpMsg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_selector"
+                    android:src="@drawable/baseline_delete_outline_24"
+                    android:scaleType="fitCenter"/>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_ConfirmChange"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btn_selector"
+                    android:src="@drawable/baseline_check_24"
+                    android:scaleType="fitCenter"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--    假装的阴影view    -->
+        <View
+            android:id="@+id/View_FakeShadow0"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/thecalendar_shadow"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"/>
+
+        <!--    基本相关信息    -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="285dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:orientation="vertical"
+                android:background="@drawable/cardborder_light_blue">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtShowCurDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0000 年 00 月 00 日"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+
+
+                <!--  日程标题  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <EditText
+                        android:id="@+id/EditText_NewUserBackUpMsgTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:textSize="30sp"
+                        android:textColor="@color/white"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:hint="标题"
+                        android:textColorHint="@color/light_light_blue"
+                        android:theme="@style/MyEditText"/>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <!--  地址选择  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <EditText
+                        android:id="@+id/EditText_NewUserBackUpMsgLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:hint="地址：地球"
+                        android:textColorHint="@color/light_light_blue"
+                        android:theme="@style/MyEditText"/>
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent" />
+
+                    <ImageButton
+                        android:id="@+id/btn_ChooseLocation"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_selector_lightblue"
+                        android:src="@drawable/baseline_gps_fixed_24_white"
+                        android:scaleType="fitCenter"/>
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent" />
+
+                    <ImageButton
+                        android:id="@+id/btn_ShowMap"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_selector_lightblue"
+                        android:src="@drawable/baseline_map_24"
+                        android:scaleType="fitCenter"/>
+
+
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <!--        开始时间        -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/txtStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="  开始时间： 00:00  "
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:gravity="center"
+                        android:background="@drawable/time_selector"/>
+
+
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <!--        结束时间        -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/txtEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="  结束时间： 00:00  "
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:gravity="center"
+                        android:background="@drawable/time_selector"/>
+
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
+
+        <!--   通知相关     -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:orientation="vertical"
+                android:background="@drawable/cardborder_light_blue">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"/>
+
+                <!--  启用震动  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_ActivateVibrateForThisBackUpMsg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="12"
+                        android:text="启用震动"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:gravity="center"
+                        android:theme="@style/CheckBox"
+                        />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <!--  启用铃声  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_ActivateRingForThisBackUpMsg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15"
+                        android:text="启用铃声(ciao)"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:gravity="center"
+                        android:theme="@style/CheckBox"
+                        />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--   日程的内容     -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="10">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:background="@drawable/cardborder_light_blue">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"/>
+
+                    <!--  日程内容  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+
+                        <EditText
+                            android:id="@+id/EditText_NewUserBackUpMsgContent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="25sp"
+                            android:textColor="@color/white"
+                            android:hint="内容"
+                            android:textColorHint="@color/light_light_blue"
+                            android:theme="@style/MyEditText2"/>
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

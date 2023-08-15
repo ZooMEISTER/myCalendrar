@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Map"
+    android:background="#486BE8">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <!--      包含返回按钮      -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout_btn_BackToEditUserBackUpMsg_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+
+                        <ImageButton
+                            android:id="@+id/btn_BackToEditUserBackUpMsg"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/btn_selector"
+                            android:src="@drawable/baseline_arrow_back_24"
+                            android:scaleType="fitCenter"/>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <!--      包含返回按钮      -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout_btn_ConfirmNewLocationFromMap_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <ImageButton
+                            android:id="@+id/btn_ConfirmNewLocationFromMap"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/btn_selector"
+                            android:src="@drawable/baseline_check_24"
+                            android:scaleType="fitCenter"/>
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--      这里是地图嘿嘿      -->
+            <LinearLayout
+                android:id="@+id/LinearLayout_TheMap"
+                android:layout_width="match_parent"
+                android:layout_height="375dp"
+
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/View_TheMAP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@color/light_blue">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="25">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+
+                    <!--                <TextView-->
+                    <!--                    android:id="@+id/curSelectedLocation"-->
+                    <!--                    android:layout_width="0dp"-->
+                    <!--                    android:layout_height="match_parent"-->
+                    <!--                    android:layout_weight="15"-->
+                    <!--                    android:text="银河系太阳系地球"-->
+                    <!--                    android:textSize="30sp"-->
+                    <!--                    android:textColor="@color/white"-->
+                    <!--                    android:gravity="center" />-->
+
+                    <ListView
+                        android:id="@+id/ListView_POI"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="15"
+                        android:background="@color/transparent"/>
+
+
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+        <!--    假装的阴影view    -->
+        <View
+            android:id="@+id/View_FakeShadow0"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/thecalendar_shadow"/>
+
+        <!--    假装的阴影view    -->
+        <View
+            android:id="@+id/View_FakeShadow1"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="432dp"
+            android:background="@drawable/thecalendar_shadow_upsidedown"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
